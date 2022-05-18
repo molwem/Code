@@ -1,5 +1,9 @@
+#CREATE A DATABASE & SWITCH TO IT
+
 CREATE DATABASE amazon;
 USE amazon;
+
+#CREATE TABLES (INC DATA TYPES, CONSTRAINTS, PRIMARY/FOREIGN KEYS)
 
 CREATE TABLE customer(
 cust_id INT UNIQUE NOT NULL AUTO_INCREMENT,
@@ -45,38 +49,52 @@ SELECT * FROM order_items;
 SELECT * FROM order_items, orders;
 SELECT * FROM order_items, items;
 
+#INSERT DATA TO EACH TABLE
+
 INSERT INTO customer(cust_name, cust_addr, card_no) VALUES('John Smith','1 Swindon Road',1234),('Ann Doe','8 Gorse Hill',2345),('Ken Jones','29 Greenbridge Drive',3456),('Lila Johnson','90 Lawn Woods',4567),('Alex Yang','17 The Colebrook',5678);
 INSERT INTO items(item_name,price,stock) VALUES('Building Secure Software',16.99,234),('The Big Book of Wordsearches',6.99,422),('Dutch in 3 months',12.99,117),('The Hungry Catepillar',3.99,371),('Lonely Plant: Greece',9.99,78);
 INSERT INTO orders(fk_cust_id) VALUES('1'),('2'),('3'),('4'),('5');
 INSERT INTO order_items(fk_order_id, fk_item_id, quantity) VALUES(1,2,5),(1,4,5),(2,1,15),(3,5,1),(3,1,1),(3,3,1),(3,2,1),(4,4,20),(5,1,1),(5,5,1);
-            
-SELECT MIN(price), stock, item_name FROM items GROUP BY price ORDER BY MIN(price) ASC;
-SELECT MAX(price), stock, item_name FROM items GROUP BY price ORDER BY MIN(price) DESC;
+
+#CALCULATE ORDER ITEM TOTAL
+
+UPDATE order_items
+	INNER JOIN items ON order_items.fk_item_id = items.item_id 
+	SET order_items.orderline_total = order_items.quantity * items.price;
+
+#MOVE ORDER ITEM TOTAL(S) INTO ORDER TOTAL
 
 UPDATE orders
 	INNER JOIN order_items ON order_items.fk_order_id = orders.order_id
     SET orders.order_total = order_items.orderline_total;
 
+#STOP/START SAFE MODE
+
+SET SQL_SAFE_UPDATES = 0;
 SET SQL_SAFE_UPDATES = 1;
 
+#MIN/MAX PRICE (WITH STOCK/ITEM NAME
+
+SELECT MIN(price), stock, item_name FROM items GROUP BY price ORDER BY MIN(price) ASC;
+SELECT MAX(price), stock, item_name FROM items GROUP BY price ORDER BY MIN(price) DESC;
+
+#NO. OF CUSTOMERS
+
 SELECT COUNT(cust_id) FROM customer;
+
+#TOTAL OF ORDERS
+
 SELECT SUM(orderline_total) FROM order_items;
 
-SELECT item_id, item_name, price FROM items;
-SELECT fk_item_id, quantity FROM order_items;
-SELECT order_id FROM orders;
-
-SELECT * FROM items;
-SELECT * FROM order_items;
-SELECT * FROM orders;
-SELECT * FROM customer;
+#VIEW ITEM DETAILS FROM ORDER ID
 
 SELECT item_id, Item_name, price FROM items WHERE item_id IN (SELECT fk_item_id FROM order_items WHERE fk_order_id = 5);
 
+#VIEW ADDRESS FROM ORDER ID
+
 SELECT cust_name, cust_addr FROM customer WHERE cust_id IN (SELECT fk_cust_id FROM orders WHERE order_id = 4);
+
+#VIEW ORDER ID FROM NAME
 
 SELECT order_id FROM orders WHERE fk_cust_id IN (SELECT cust_id FROM customer WHERE cust_name = 'Alex Yang');
 
-UPDATE order_items
-	INNER JOIN items ON order_items.fk_item_id = items.item_id 
-	SET order_items.orderline_total = order_items.quantity * items.price;
