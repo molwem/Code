@@ -49,10 +49,6 @@ INSERT INTO customer(cust_name, cust_addr, card_no) VALUES('John Smith','1 Swind
 INSERT INTO items(item_name,price,stock) VALUES('Building Secure Software',16.99,234),('The Big Book of Wordsearches',6.99,422),('Dutch in 3 months',12.99,117),('The Hungry Catepillar',3.99,371),('Lonely Plant: Greece',9.99,78);
 INSERT INTO orders(fk_cust_id) VALUES('1'),('2'),('3'),('4'),('5');
 INSERT INTO order_items(fk_order_id, fk_item_id, quantity) VALUES(1,2,5),(1,4,5),(2,1,15),(3,5,1),(3,1,1),(3,3,1),(3,2,1),(4,4,20),(5,1,1),(5,5,1);
-
-UPDATE order_items
-	INNER JOIN items ON order_items.fk_item_id = items.item_id
-    SET order_items.orderline_total = order_items.quantity * items.price;
             
 SELECT MIN(price), stock, item_name FROM items GROUP BY price ORDER BY MIN(price) ASC;
 SELECT MAX(price), stock, item_name FROM items GROUP BY price ORDER BY MIN(price) DESC;
@@ -65,8 +61,6 @@ SET SQL_SAFE_UPDATES = 1;
 
 SELECT COUNT(cust_id) FROM customer;
 SELECT SUM(orderline_total) FROM order_items;
-
-SELECT fk_item_id FROM order_items WHERE fk_order_id =; 
 
 SELECT item_id, item_name, price FROM items;
 SELECT fk_item_id, quantity FROM order_items;
@@ -82,3 +76,7 @@ SELECT item_id, Item_name, price FROM items WHERE item_id IN (SELECT fk_item_id 
 SELECT cust_name, cust_addr FROM customer WHERE cust_id IN (SELECT fk_cust_id FROM orders WHERE order_id = 4);
 
 SELECT order_id FROM orders WHERE fk_cust_id IN (SELECT cust_id FROM customer WHERE cust_name = 'Alex Yang');
+
+UPDATE order_items
+	INNER JOIN items ON order_items.fk_item_id = items.item_id 
+	SET order_items.orderline_total = order_items.quantity * items.price;
