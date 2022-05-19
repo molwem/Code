@@ -17,3 +17,8 @@ SELECT movies.*
 		SELECT genres.id
 			FROM genres
             WHERE genres.name = 'Sci-fi');
+
+SELECT users.id
+	FROM users
+	WHERE users.age = '24' AND users.gender = 'M' AND users.occupation_id = (
+		SELECT occupations.id FROM occupations WHERE name = 'Student');
