@@ -1,0 +1,1 @@
+SELECT movies.id, movies.title, movies.release_date FROM movies INNER JOIN genres_movies ON movies.id = genres_movies.movie_id WHERE genres_movies =(SELECT genres.name FROM genres JOIN genres_movies ON genres.id = genres_movies.genre_id);
