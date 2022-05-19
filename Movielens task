@@ -1,0 +1,9 @@
+#1
+SELECT title, release_date FROM movies WHERE release_date BETWEEN '1983-01-01' AND '1993-12-31' ORDER BY release_date DESC;
+
+#2
+SELECT AVG(rating) FROM ratings GROUP BY movie_id ORDER BY AVG(rating) ASC;
+SELECT title FROM movies WHERE m.id = r.movie_id (SELECT AVG(rating) FROM ratings) GROUP BY movie_id ORDER BY AVG(rating) ASC;
+
+SELECT movies.title, AVG(rating) FROM movies INNER JOIN ratings ON movies.id = ratings.movie_id GROUP BY movie_id ORDER BY AVG(rating) ASC;
+
