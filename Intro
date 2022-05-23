@@ -5,7 +5,7 @@
         </head>
 
         <body>
-            <p> Welcome to HTML</p>
+            <h1> Welcome to HTML</h1>
             <p> This is some text and this is <b>important</b></p>
             <p>This</p>
             <p>is</p>
