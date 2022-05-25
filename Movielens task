@@ -7,30 +7,16 @@ SELECT title FROM movies WHERE m.id = r.movie_id (SELECT AVG(rating) FROM rating
 
 SELECT movies.title, AVG(rating) FROM movies INNER JOIN ratings ON movies.id = ratings.movie_id GROUP BY movie_id ORDER BY AVG(rating) ASC;
 
-#3 WORKING
-
-#select sci-fi movie details
-SELECT movies.*
-	FROM movies
-	JOIN genres_movies ON movies.id = genres_movies.movie_id
-    WHERE genres_movies.genre_id =(
-		SELECT genres.id
-			FROM genres
-            WHERE genres.name = 'Sci-fi' AND genres.genre_id);
-
-#select user ids for 24yo male students
-SELECT users.id
-	FROM users
-    WHERE users.age = '24' AND users.gender = 'M' AND users.occupation_id = (
-		SELECT occupations.id FROM occupations WHERE name = 'Student');
-
-#select 5* sci-fi reviews from 24yo male studets
+#3
 
 SELECT ratings.user_id, ratings.movie_id, ratings.rating
 	FROM ratings
-	#JOIN [TABLE 1] ON [TABLE1.COLUMN1] = [TABLE2.COLUMN2]
-    WHERE ratings.rating = '5' AND ratings.user_id =(
+	JOIN users ON users.id = ratings.user_id
+    WHERE ratings.rating = '5' AND ratings.user_id IN (
 		SELECT users.id
 			FROM users
 			WHERE users.age = '24' AND users.gender = 'M' AND users.occupation_id = (
 				SELECT occupations.id FROM occupations WHERE name = 'Student'));
+
+#4
+
