@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <style>
+        b {color:red}
+    </style>
+     <link rel="stylesheet" href="Style_sheet.css">
+</head>
+<body>
+    <h1>Home Page</h1>
+    <img src="\Images\cat.jfif" alt="Cat"/>
+    <br>
+    <h2 style="color:sienna">This is a cat.</h2>
+    <br>
+    <a href="https://www.cats.org.uk/" target="_blank">Adopt a cat</a>
+    <br>
+    <p>Thinking about adopting a <span>cat</span> or <span>kitten</span>? At <span>Cats</span> Protection, we believe in matching the right <span>cat</span> to the right home. That's why we look at everything from your potential pet's personality to where you live - creating the perfect match for both <span>cat</span> and owner.
+        While there can be a lot to think about when adopting a <span>cat</span>, <span>Cats</span> Protection aims to take away some of your worries, providing plenty of advice along the way.</p>
+    <p>This is some text and this is <b>important</b></p>
+    <p>This</p>
+    <p>is</p>
+    <p>a</p>
+    <p>paragraph</p>
+    <br>
+    <a href="Cat_pics.html" target="_blank"> Meet the cats </a>
+</body>
+</html>

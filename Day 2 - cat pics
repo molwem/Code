@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cat Pictures</title>
+    <link rel="stylesheet" href="Style_sheet.css">
+    <style>
+        img { border-style: outset;
+        border-color: olivedrab;
+        border-width: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meet the cats</h1>
+    </header>
+    <main>
+    <a href="https://www.cats.org.uk/" target="_blank">Adopt a cat</a>
+    <br>
+    <img src="\Images\Fred.jfif" alt="Fred"/>
+    <h2>Fred</h2>
+    <h3>8 years</h3>
+    <br>
+    <img src="\Images\Pearl.jfif" alt="Pearl"/>
+    <h2>Pearl</h2>
+    <h3>3 years</h3>
+    <br>
+    <img src="\Images\Jason.jfif" alt="Jason"/>
+    <h2>Jason</h2>
+    <h3>12 years</h3>
+    <br>
+    <img src="\Images\Tilly.jfif" alt="Tilly"/>
+    <h2>Tilly</h2>
+    <h3>10 months</h3>
+    <a href="https://www.cats.org.uk/" target="_blank">Adopt a cat</a>
+    </main>
+    <nav>
+        <a href="Home.html" target="_blank"> Home </a>
+    </nav>
+</body>
+</html>

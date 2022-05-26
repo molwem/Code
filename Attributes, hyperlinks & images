@@ -1,0 +1,49 @@
+<!-- MAIN PAGE -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Attributes, Images & Hyperlinks</title>
+</head>
+<body>
+    <p title="Tooltip">QA is the leading training provider.</p>
+<br>
+    <a href="https://qa.com/">QA website</a>
+    <img src="C:\Users\Admin\Pictures\QA.png"alt="QA logo"/>
+<br>
+    <img src="C:\Users\Admin\Pictures\cat.jfif" width="250" height="400">
+<br>
+    <a href="index.html" target="_self">Index</a>
+    <a href="about.html" target="_self">About</a>
+</body>
+</html>
+
+
+<!-- 2nd PAGE -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <p>This is the index.</p>
+    <a href="about.html" target="_self">About</a>
+    <a href="home.html" target="_self">Attributes, Images & HYperlinks</a>
+</body>
+</html>
+
+
+<!-- 3rd PAGE -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About</title>
+</head>
+<body>
+    <p>This is the about.</p>
+    <a href="index.html" target="_self">Index</a>
+    <a href="home.html" target="_self">Attributes, Images & HYperlinks</a>
+</body>
+</html>
