@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Demo JavaScript</h1>
+    
+    <h2>Events 1</h2>
+
+    <p id="myAge"></p>
+
+    <script type="text/javascript">
+        let myPerson = {name: "Molly", age: 22, occupation: "Analyst"};
+
+        function ageUp() {
+            myPerson.age ++;
+        document.getElementById('myAge').innerHTML= myPerson.age;
+        }
+
+    </script>
+
+    <button type="button" onclick="ageUp()">Age up!</button>
+
+</body>
+</html>
