@@ -23,5 +23,36 @@
 
     <button type="button" onclick="ageUp()">Age up!</button>
 
+  <h2>Events 2 (/Functions 3)</h2>
+
+    <form onsubmit = "showPerson(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+        <br>
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="job" name="job">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+<br>
+
+    <script>
+        const nameInput = document.getElementById("name")
+        const ageInput = document.getElementById("age")
+        const jobInput = document.getElementById("job")
+        let person = {name, age, job};
+
+        function showPerson(event) {
+            event.preventDefault();
+            person.name = nameInput.value;
+            person.age = ageInput.value;
+            person.job = jobInput.value;
+            console.log(person);
+        }
+    </script>
+
 </body>
 </html>
