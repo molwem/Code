@@ -1,0 +1,27 @@
+button {
+    margin:3px;
+    content: 10px 5px;
+    background-color:seashell;
+    position: relative;
+}
+
+#buttClear {
+    background-color:red
+}
+
+#buttDel {
+    background-color:salmon
+}
+
+#buttEqual {
+    background-color:forestgreen
+}
+
+#buttDot, #buttPlus, #buttMinus, #buttX, #buttDivide {
+    background-color:cornflowerblue
+}
+
+input {
+    border: 5px cornflowerblue;
+    border-style: double;
+}
