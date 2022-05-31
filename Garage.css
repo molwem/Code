@@ -34,13 +34,20 @@ body {
     border-radius: 5px;
 }
 
-.empLink:hover {
+#empLinkId {
+    margin: 5px 30px 10px 30px;
+    border-radius: 5px;
+    background-color:azure;
+    font-family:'Segoe UI';
+}
+
+#empLinkId:hover {
     background-color: cadetblue;
     color: azure;
 }
 
 #checkinlink {
-    margin: 10px 30px 10px 30px;
+    margin: 10px 30px 5px 30px;
     border-radius: 5px;
     background-color:azure;
     font-family:'Segoe UI';
@@ -52,7 +59,7 @@ body {
 }
 
 #checkoutlink {
-    margin: 10px 30px 10px 30px;
+    margin: 10px 30px 5px 30px;
     border-radius: 5px;
     background-color:azure;
     font-family:'Segoe UI';
