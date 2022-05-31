@@ -24,4 +24,5 @@ button {
 input {
     border: 5px cornflowerblue;
     border-style: double;
+    border-radius: 5px;
 }
