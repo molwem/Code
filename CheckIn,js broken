@@ -1,0 +1,23 @@
+let arrName = new Array();
+let arrReg = new Array();
+let arrServ = new Array();
+
+function insert(event) {
+    debugger
+    event.preventDefault()
+    let name = document.getElementById("name").value;
+    let registration = document.getElementById("registration").value;
+    let services = document.getElementById("services").value;
+    arrName[arrName.length]=name;
+    arrReg[arrReg.length]=registration;
+    arrServ[arrServ.length]=services;
+}
+
+function clearAndShow() {
+    let content = "<b>Booking details: </b><br>";
+    content+= [...arrName]+"</br>";
+    content+= [...arrReg]+"</br>";
+    content+= [...arrServ]+"</br>";
+
+    document.getElementById("checkInDisplay").innerHTML = content;
+}
