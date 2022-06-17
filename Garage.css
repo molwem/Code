@@ -30,18 +30,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 40px 10px 30px 20px;
-    border-radius: 5px;
 }
 
 #empLinkId {
-    margin: 5px 30px 10px 30px;
+    margin: 40px 10px 30px 20px;
     border-radius: 5px;
     background-color:azure;
     font-family:'Segoe UI';
 }
 
-#empLinkId:hover {
+#empLink:hover {
     background-color: cadetblue;
     color: azure;
 }
